@@ -10,7 +10,7 @@ llm = Llama(
 messages = [
     {
         "role": "user",
-        "content": "Who created git?",
+        "content": "Give command for git diff for everything in the repo",
     }
 ]
 
