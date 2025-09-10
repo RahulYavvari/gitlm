@@ -1,12 +1,8 @@
 import os
-import sys
 import requests
 from tqdm import tqdm
 
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(parent_dir)
-
-from config import _MODEL_URL
+from gitlm.utils.config import _MODEL_URL
 
 def download_file_from_url(url: str, output_path: str):
     if os.path.exists(output_path):
@@ -46,8 +42,9 @@ if __name__ == "__main__":
 
     model_filename = MODEL_URL.split("/")[-1]
     
-    output_directory = "."
-    output_file_path = os.path.join(output_directory, model_filename)
+    current_script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    output_file_path = os.path.join(current_script_dir, model_filename)
 
     print("Attempting to download the TinyLlama GGUF model...")
     download_file_from_url(MODEL_URL, output_file_path)

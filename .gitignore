@@ -1,3 +1,4 @@
-model/*.gguf
+*.gguf
 __pycache__
 .env
+venv/

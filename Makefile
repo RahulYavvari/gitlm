@@ -1,5 +1,5 @@
 gitlm:
-	@python cli/gitlm.py --model $(model)
+	@python -m gitlm $(filter-out $@,$(MAKECMDGOALS))
 
 freeze:
 	pip freeze > requirements.txt

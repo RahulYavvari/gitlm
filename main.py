@@ -1,16 +1,18 @@
-from llama_cpp import Llama
-from config import _MODEL_FILENAME
+# from llama_cpp import Llama
+# from config import _MODEL_FILENAME
 
-llm = Llama(
-    model_path="model/" + _MODEL_FILENAME,
-    verbose=False, 
-    n_ctx=2048
-)
+# llm = Llama(
+#     model_path="model/" + _MODEL_FILENAME,
+#     verbose=False, 
+#     n_ctx=2048
+# )
+
+from model_interface.config import llm
 
 messages = [
     {
         "role": "user",
-        "content": "Give command for git diff for everything in the repo",
+        "content": "Give me a commit message. I have added cli and model_inteface, also setup Makefile",
     }
 ]
 
